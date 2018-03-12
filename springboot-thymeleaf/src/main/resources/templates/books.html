@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>网上书城</title>
+</head>
+<body>
+    <div>
+        <label>书本信息</label>
+        <ul th:each="book : ${books}">
+            <li>
+                书名：<span th:text="${book.name}"></span>
+                价格：￥<span th:text="${book.price}"></span>
+                状态：<span th:if="${book.status} eq '1'">热销</span>
+                <span th:if="${book.status} eq '0'">下架</span>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>
